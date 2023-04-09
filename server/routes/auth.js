@@ -8,8 +8,8 @@ const jwt = require("jsonwebtoken");
 const JWT_SECRET = "wrejr438rhuesjklews";
 const requireLogin = require("../middleware/requireLogin");
 const nodemailer = require("nodemailer");
-var sid = "ACd6e25c4544825090da4e748494c22df4";
-var auth_token = "eae457fbb9b3946ee0e89dc73c4074c8";
+var sid = "paste here";
+var auth_token = "paste here";
 var twilio = require("twilio")(sid, auth_token);
 // const sendgridTransport = require("nodemailer-sendgrid-transport");
 //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    second api
