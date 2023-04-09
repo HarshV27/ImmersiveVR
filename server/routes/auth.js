@@ -11,24 +11,14 @@ const nodemailer = require("nodemailer");
 var sid = "paste here";
 var auth_token = "paste here";
 var twilio = require("twilio")(sid, auth_token);
-// const sendgridTransport = require("nodemailer-sendgrid-transport");
-//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    second api
-// const transporter = nodemailer.createTransport(
-//   sendgridTransport({
-//     auth: {
-//       api_key:
-//         "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",
-//       // "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",
-//     },
-//   })
-// );
+
 let transporter = nodemailer.createTransport({
   service: "gmail",
   host: "ro-reply.gmail.com",
   secure: false,
   auth: {
-    user: "harshvardhan10052003@gmail.com",
-    pass: "mvqorxzqwqzfcazy",
+    user: "-",
+    pass: "-",
   },
 });
 
@@ -66,15 +56,10 @@ router.post("/signup", (req, res) => {
         user
           .save()
           .then((user) => {
-            // transporter.sendMail({
-            //   to: user.email,
-            //   from: "harshvardhan10052003@gmail.com",
-            //   subject: "signup  success",
-            //   html: "<h1>welcome to instagram</h1>",
-            // });
+           
             twilio.messages
               .create({
-                from: "+19853153116",
+                from: "-",
                 to: `+91${user.num}`,
                 body: `your login credetials are:\n Email Id: ${user.email}\n Password: ${password}`,
               })
